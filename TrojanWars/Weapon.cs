@@ -1,0 +1,7 @@
+﻿namespace TrojanWars
+{
+    class Weapon
+    {
+
+    }
+}

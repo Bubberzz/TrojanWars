@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace TrojanWars
 {
-    class Program
+    class Armour
     {
-        static void Main()
-        {
 
-        }
     }
 }
