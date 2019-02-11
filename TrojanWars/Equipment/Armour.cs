@@ -4,8 +4,8 @@ namespace TrojanWars.Equipment
 {
     class Armour
     {
-        private int trojanArmour;
-        private int greekArmour;
+        private const int TROJAN_ARMOUR = 5;
+        private const int GREEK_ARMOUR = 5;
 
         private int armourPoints;
 
@@ -16,10 +16,10 @@ namespace TrojanWars.Equipment
             switch (allegiance)
             {
                 case Allegiance.Trojan:
-                    armourPoints = trojanArmour;
+                    armourPoints = TROJAN_ARMOUR;
                     break;
                 case Allegiance.Greek:
-                    armourPoints = greekArmour;
+                    armourPoints = GREEK_ARMOUR;
                     break;
                 default:
                     break;

@@ -5,10 +5,10 @@ namespace TrojanWars
 {
     class Heroes
     {
-        private int trojanStartingHealth;
-        private int greekStartingHealth;
+        private const int TROJAN_STARTING_HEALTH = 100;
+        private const int GREEK_STARTING_HEALTH = 100;
 
-        private Allegiance allegiance;
+        private readonly Allegiance ALLEGIANCE;
 
         private int health;
         private string name;
@@ -25,7 +25,7 @@ namespace TrojanWars
         public Heroes(string name, Allegiance allegiance)
         {
             this.name = name;
-            this.allegiance = allegiance;
+            ALLEGIANCE = allegiance;
             isAlive = true;
 
             switch (allegiance)
@@ -33,12 +33,12 @@ namespace TrojanWars
                 case Allegiance.Trojan:
                     weapon = new Weapon(allegiance);
                     armour = new Armour(allegiance);
-                    health = trojanStartingHealth;
+                    health = TROJAN_STARTING_HEALTH;
                     break;
                 case Allegiance.Greek:
                     weapon = new Weapon(allegiance);
                     armour = new Armour(allegiance);
-                    health = greekStartingHealth;
+                    health = GREEK_STARTING_HEALTH;
                     break;
                 default:
                     break;
