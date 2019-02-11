@@ -1,4 +1,4 @@
-﻿namespace TrojanWars
+﻿namespace TrojanWars.Enum
 {
     enum Allegiance
     {
