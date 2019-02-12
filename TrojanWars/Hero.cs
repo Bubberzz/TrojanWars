@@ -1,9 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using TrojanWars.Enum;
 using TrojanWars.Equipment;
 namespace TrojanWars
 {
-    class Heroes
+    class Hero
     {
         private const int TROJAN_STARTING_HEALTH = 100;
         private const int GREEK_STARTING_HEALTH = 100;
@@ -22,7 +23,7 @@ namespace TrojanWars
         private Weapon weapon;
         private Armour armour;
 
-        public Heroes(string name, Allegiance allegiance)
+        public Hero(string name, Allegiance allegiance)
         {
             this.name = name;
             ALLEGIANCE = allegiance;
@@ -43,6 +44,21 @@ namespace TrojanWars
                 default:
                     break;
             }
+        }
+
+        public void Attack(Hero enemyHero)
+        {
+            int damage = weapon.Damage / enemyHero.armour.ArmourPoints;
+            enemyHero.health = enemyHero.health - damage;
+
+            if (enemyHero.health <= 0)
+            {
+                enemyHero.isAlive = false;
+                Console.WriteLine($"{enemyHero.name} is dead. {name} is victorious!");
+                Console.ReadLine();
+            }
+
+            
         }
     }
 }
