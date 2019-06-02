@@ -1,26 +1,23 @@
-﻿using TrojanWars.Enum;
+﻿using System;
+using TrojanWars.Enum;
 
 namespace TrojanWars.Equipment
 {
-    class Weapon
+    internal class Weapon
     {
-        private const int TROJAN_WEAPON_DAMAGE = 5;
-        private const int GREEK_WEAPON_DAMAGE = 5;
-        private int damage;
-
-        public int Damage => damage;
+        private static readonly Random Sword = new Random();
+        private static readonly Random Spear = new Random();
+        public int Damage { get; }
 
         public Weapon(Allegiance allegiance)
         {
             switch (allegiance)
             {
                 case Allegiance.Trojan:
-                    damage = TROJAN_WEAPON_DAMAGE;
+                    Damage = Sword.Next(10, 50);
                     break;
                 case Allegiance.Greek:
-                    damage = GREEK_WEAPON_DAMAGE;
-                    break;
-                default:
+                    Damage = Spear.Next(10, 50);
                     break;
             }
         }

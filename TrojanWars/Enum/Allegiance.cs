@@ -1,6 +1,6 @@
 ﻿namespace TrojanWars.Enum
 {
-    enum Allegiance
+    internal enum Allegiance
     {
         Trojan,
         Greek

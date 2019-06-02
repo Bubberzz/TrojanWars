@@ -2,26 +2,21 @@
 
 namespace TrojanWars.Equipment
 {
-    class Armour
+    internal class Armour
     {
         private const int TROJAN_ARMOUR = 5;
         private const int GREEK_ARMOUR = 5;
-
-        private int armourPoints;
-
-        public int ArmourPoints => armourPoints;
+        public int ArmourPoints { get; }
 
         public Armour(Allegiance allegiance)
         {
             switch (allegiance)
             {
                 case Allegiance.Trojan:
-                    armourPoints = TROJAN_ARMOUR;
+                    ArmourPoints = TROJAN_ARMOUR;
                     break;
                 case Allegiance.Greek:
-                    armourPoints = GREEK_ARMOUR;
-                    break;
-                default:
+                    ArmourPoints = GREEK_ARMOUR;
                     break;
             }
         }
